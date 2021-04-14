@@ -1,11 +1,18 @@
-import React, { useContext } from "react";
-import { ColorContext } from "../global/ColorContext";
+import React from "react";
+import MainContent from "./MainContent";
+import Textarea from "./Textarea";
 
 const Main = () => {
-  const { selectedColor } = useContext(ColorContext);
   return (
-    <div>
-      
+    <div className="container py-3">
+      <div className="row">
+        <div className="col-md-4">
+          <Textarea />
+        </div>
+        <div className="col-md-8">
+          <MainContent />
+        </div>
+      </div>
     </div>
   );
 };

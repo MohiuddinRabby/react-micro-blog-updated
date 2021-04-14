@@ -13,7 +13,7 @@ const Navbar = () => {
           <Link
             to="/"
             className="navbar-brand"
-            style={{ color: selectedColor ,fontWeight:'bold'}}
+            style={{ color: selectedColor, fontWeight: "bold" }}
           >
             Home
           </Link>
