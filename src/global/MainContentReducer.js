@@ -9,13 +9,17 @@ export const MainContentReducer = (state = initialState, action) => {
     case "GET_CONTENT_DATA": {
       return { ...state, contentData: state.contentData };
     }
-    // case "ADD_CONTENT": {
-    //   const newTask = [
-    //     { id: action.payload.id, taskName: action.payload.taskName },
-    //     ...state.taskList,
-    //   ];
-    //   return { ...state, taskList: newTask };
-    // }
+    case "ADD_CONTENT": {
+      const newContent = [
+        {
+          id: action.payload.id,
+          author: "Golam Mohiuddin",
+          body: action.payload.body,
+        },
+        ...state.contentData,
+      ];
+      return { ...state, contentData: newContent };
+    }
     default: {
       return state;
     }

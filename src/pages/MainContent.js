@@ -4,7 +4,6 @@ import MainContentPost from "./MainContentPost";
 
 const MainContent = () => {
   const { state, dispatch } = useContext(MainContentContext);
-  console.log(state?.contentData);
   useEffect(() => {
     dispatch({ type: "GET_CONTENT_DATA" });
   }, [dispatch]);

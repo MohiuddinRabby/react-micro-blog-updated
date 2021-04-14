@@ -5,7 +5,7 @@ const MainContentPost = ({ post }) => {
   const { selectedColor } = useContext(ColorContext);
   const [like, setLike] = useState(false);
   const likeBlogPost = () => {
-    setLike(true);
+    setLike(!like);
   };
   return (
     <div className="single-content">
