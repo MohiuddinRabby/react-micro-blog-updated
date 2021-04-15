@@ -42,6 +42,7 @@ const Textarea = () => {
                   className="text-input"
                   placeholder="Write Something"
                   name="postText"
+                  required
                 />
               </div>
               <div className="text-center">

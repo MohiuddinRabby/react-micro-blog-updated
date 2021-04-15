@@ -65,7 +65,7 @@ const Navbar = () => {
                     outline: "none",
                     marginRight: "5px",
                   }}
-                ></button>
+                >#</button>
               </Tippy>
             </div>
           </div>
