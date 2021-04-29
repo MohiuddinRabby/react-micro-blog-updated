@@ -4,17 +4,17 @@ const initialState = {
   contentData: contentData,
 };
 
-export const MainContentReducer = (state = initialState, action) => {
-  switch (action.type) {
+export const MainContentReducer = (state = initialState, { type, payload }) => {
+  switch (type) {
     case "GET_CONTENT_DATA": {
-      return { ...state, contentData: state.contentData };
+      return { ...state, contentData: contentData };
     }
     case "ADD_CONTENT": {
       const newContent = [
         {
-          id: action.payload.id,
+          id: payload.id,
           author: "Golam Mohiuddin",
-          body: action.payload.body,
+          body: payload.body,
         },
         ...state.contentData,
       ];

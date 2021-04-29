@@ -14,14 +14,19 @@ const Textarea = () => {
       <Formik
         initialValues={initialValues}
         onSubmit={(values, { setSubmitting, resetForm }) => {
-          dispatch({
-            type: "ADD_CONTENT",
-            payload: {
-              id: uuidv4(),
-              body: values.postText,
-            },
-          });
-          resetForm();
+          let allowed = values.postText.length;
+          if (allowed > 0 && allowed <= 100) {
+            dispatch({
+              type: "ADD_CONTENT",
+              payload: {
+                id: uuidv4(),
+                body: values.postText,
+              },
+            });
+            resetForm();
+          } else {
+            alert("letters should not more than 100");
+          }
         }}
       >
         {({ values, setFieldValue, isValid }) => (
@@ -46,6 +51,17 @@ const Textarea = () => {
                 />
               </div>
               <div className="text-center">
+                <p
+                  style={{
+                    color: `${
+                      values.postText.length > 100 ? `red` : `${selectedColor}`
+                    }`,
+                    fontWeight: "bold",
+                  }}
+                >{`${100 - values.postText.length} ${
+                  values.postText.length > 100 ? `words exceeded` : `words left`
+                }`}</p>
+                <p></p>
                 <button
                   type="submit"
                   className="btn"

@@ -65,7 +65,9 @@ const Navbar = () => {
                     outline: "none",
                     marginRight: "5px",
                   }}
-                >#</button>
+                >
+                  <i className="fas fa-palette" style={{ color: "#fff" }}></i>
+                </button>
               </Tippy>
             </div>
           </div>
